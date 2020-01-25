@@ -18,12 +18,12 @@ $ pip3 install readability-metrics
 ```
 
 ## Usage
-Readability metrics can be used as follows:
+Readability metrics can be used as follows (note it is imported as `import metrics`):
 
 ```python
 import metrics # import package
 
-rdm = Readability()
+rdm = metrics.Readability()
 rdm.analyze_text("This is a sentence.")
 rdm.analyze_text("This is part of the same document.")
 rdm.analyze_text("This is also part of the same document.")
@@ -51,7 +51,7 @@ let transcript = [
     # ...
 ]
 
-readability_per_speaker = defaultdict(lambda: Readability())
+readability_per_speaker = defaultdict(lambda: metrics.Readability())
 
 # Calculate readability metrics
 for dialogue in transcript:
@@ -66,7 +66,8 @@ for speaker in readability_per_speaker:
     "SPEAKER NAME": {
         {
             'ARI': 12.163787878787879,
-            'FleschReadingEase': 58.2319, 'FleschKincaidGradeLevel': 11.2857,
+            'FleschReadingEase': 58.2319, 
+            'FleschKincaidGradeLevel': 11.2857,
             'GunningFogIndex': 14.5465,
             'SMOGIndex': 12.287087810503355,
             'ColemanLiauIndex': 9.5226,
